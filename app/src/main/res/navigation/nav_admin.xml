@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/home_fragment">
+
+    <fragment
+        android:id="@+id/home_fragment"
+        android:name="com.example.finalcloudproject.user.HomeUserFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home_admin" >
+<!--        <action-->
+<!--            android:id="@+id/action_homeFragment_to_cartFragment"-->
+<!--            app:destination="@id/subsecribeFragment" />-->
+    </fragment>
+
+    <fragment
+        android:id="@+id/search_fragment"
+        android:name="com.example.finalcloudproject.user.SearchFragment"
+        android:label="fragment_more"
+        tools:layout="@layout/fragment_search" />
+
+    <fragment
+        android:id="@+id/profile_fragment"
+        android:name="com.example.finalcloudproject.admin.ProfileAdminFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile_admin" />
+    <fragment
+        android:id="@+id/chat_admin_fragment"
+        android:name="com.example.finalcloudproject.admin.ChatAdminFragment"
+        android:label="fragment_chat_admin"
+        tools:layout="@layout/fragment_chat_admin" />
+    <fragment
+        android:id="@+id/notifications_fragment"
+        android:name="com.example.finalcloudproject.admin.NotificationsFragment"
+        android:label="fragment_notifications"
+        tools:layout="@layout/fragment_notifications" />
+</navigation>

@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layoutDirection="rtl"
+    tools:context=".view.LoginActivity">
+
+    <!--    <FrameLayout-->
+    <!--        android:id="@+id/fl_header_image"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="200dp"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toTopOf="parent">-->
+    <!--    -->
+    <!--        <ImageView-->
+    <!--            android:layout_width="220dp"-->
+    <!--            android:layout_height="100dp"-->
+    <!--            android:layout_gravity="center"-->
+    <!--            android:contentDescription="@string/app_name"-->
+    <!--            android:scaleType="fitCenter"-->
+    <!--            android:src="@drawable/sicon"-->
+    <!--            />-->
+
+    <!--    </FrameLayout>-->
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:background="@drawable/top_background"
+        android:backgroundTint="@color/cPrimary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingBottom="20dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/doctors" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/lato_bold"
+            android:text="تسجيل الدخول"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="25sp" />
+
+        <EditText
+            android:id="@+id/txtemailS"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="20dp"
+            android:background="@drawable/edit_text_background"
+            android:drawableStart="@drawable/ic_baseline_email_24"
+            android:drawablePadding="15dp"
+            android:drawableTint="@color/cPrimary"
+            android:hint="البريد الالكتروني"
+            android:inputType="textEmailAddress"
+            android:padding="15dp"
+            android:textColorHint="#979797" />
+        <!--    android:hint="@string/email_address"-->
+
+
+        <EditText
+            android:id="@+id/txtpasswordS"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:background="@drawable/edit_text_background"
+            android:drawableStart="@drawable/ic_baseline_lock_24"
+            android:drawablePadding="15dp"
+            android:drawableTint="@color/cPrimary"
+            android:hint="كلمة المرور"
+            android:inputType="textEmailAddress"
+            android:padding="15dp"
+            android:textColorHint="#979797" />
+        <!--    android:hint="@string/password"-->
+        <!--        android:inputType="textPassword"-->
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="10dp">
+
+            <!--            <CheckBox-->
+            <!--                android:id="@+id/ShowPassword"-->
+            <!--                android:layout_width="wrap_content"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:layout_alignParentStart="true"-->
+            <!--                android:layout_centerInParent="true"-->
+            <!--                android:buttonTint="@color/colorThemeorange"-->
+            <!--                android:clickable="true"-->
+            <!--                android:focusable="true"-->
+            <!--                android:fontFamily="@font/lato_bold"-->
+            <!--                android:foreground="?android:attr/selectableItemBackground"-->
+            <!--                android:padding="10dp"-->
+            <!--                android:text="اظهار كلمة المرور"-->
+            <!--                android:textColor="#979797" />-->
+
+            <TextView
+                android:id="@+id/txtForgetPassword"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerInParent="true"
+                android:clickable="true"
+                android:focusable="true"
+                android:fontFamily="@font/lato_bold"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:padding="10dp"
+                android:text="هل نسيت كلمة المرور؟"
+                android:textAllCaps="false"
+                android:textColor="#979797"
+                android:textSize="13sp" />
+
+        </RelativeLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+
+        <Button
+            android:id="@+id/btnlog"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:layout_marginEnd="40dp"
+            android:background="@drawable/theme_button"
+            android:fontFamily="@font/lato_bold"
+            android:text="تسجيل الدخول"
+            android:textColor="@color/white"
+            app:backgroundTint="@color/cPrimary"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:fontFamily="@font/lato"
+            android:text="لا تمتلك حساب؟"
+            android:textAlignment="center"
+            android:textColor="#6C6C6C" />
+
+
+        <TextView
+            android:id="@+id/btnReg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="30dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:fontFamily="@font/lato_bold"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:padding="15dp"
+            android:text="انشئ حسابا"
+            android:textAllCaps="false"
+            android:textColor="@color/black"
+            android:textSize="17sp" />
+
+    </LinearLayout>
+
+
+
+    <!--    <Button-->
+    <!--        android:id="@+id/btnReg"-->
+    <!--        style="@style/Widget.AppCompat.Button.Borderless"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:text="انشاء حساب"-->
+    <!--        android:textColor="#FFC54D"-->
+    <!--        android:textStyle="bold"-->
+    <!--        app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintHorizontal_bias="0.7"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toBottomOf="@+id/footer"-->
+    <!--        app:layout_constraintVertical_bias="1.0" />-->
+
+    <!--    <View-->
+    <!--        android:id="@+id/footer"-->
+    <!--        android:layout_width="0dp"-->
+    <!--        android:layout_height="1dp"-->
+    <!--        android:layout_marginBottom="50dp"-->
+    <!--        android:background="#fff"-->
+    <!--        app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--        tools:ignore="MissingConstraints" />-->
+
+    <!--    android:id="@+id/btnforget"-->
+
+
+    <!--    <Button-->
+    <!--        style="@style/Widget.AppCompat.Button.Borderless"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginLeft="5dp"-->
+    <!--        android:padding="0dp"-->
+    <!--        android:text="Forget"-->
+    <!--        android:textColor="#FFC54D"-->
+    <!--        android:textStyle="bold"-->
+    <!--        android:visibility="gone"-->
+    <!--        app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintHorizontal_bias="0.8"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toTopOf="parent"-->
+    <!--        app:layout_constraintVertical_bias="0.7" />-->
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

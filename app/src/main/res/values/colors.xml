@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#03A9F4</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="green">#3F51B5</color>
+    <color name="gray">#8E8F8E</color>
+
+
+    <color name="login_from_details">#ccffffff</color>
+    <color name="login_from_details_light">#C0C0C0</color>
+    <color name="login_from_details_medium">#66ffffff</color>
+
+    <color name="cPrimary">#264BFE</color>
+    <color name="cPrimaryDark">#F94C66</color>
+    <color name="cAccent">#F94C66</color>
+
+    <color name="tabBackgroundColor">#F94C66</color>
+    <color name="red">#F94C66</color>
+
+
+
+    <color name="splashcolor">@color/colorS</color>
+    <color name="medium_gray">#f3f3f3</color>
+
+
+    <!--    <color name="colorPrimary">#F37878</color>-->
+    <color name="colorPrimaryDark">#2C3639</color>
+    <color name="colorAccent">#DCF94C66</color>
+    <color name="colorS">#DCF94C66</color>
+
+
+    <color name="colorThemegreen">#D9F8C4</color>
+    <color name="colorThemeorange">#FAD9A1</color>
+
+    <color name="colorPrimaryText">#1B2430</color>
+    <color name="colorSeconderyText">#2C3639</color>
+
+
+    <color name="snackBarError">#F94C66</color>
+    <color name="snackBarSuccess">#4CAF50</color>
+
+    <color name="colorLightGrey">#F1F1F1</color>
+
+    <color name="theme_color">#264BFE</color>
+    <color name="theme_color_light">#92A5FF</color>
+    <color name="theme_color_text_button">#3967D6</color>
+    <color name="edit_text_background">@android:color/white</color>
+
+    <color name="material_dynamic_neutral60">#66ffffff</color>
+
+
+    <color name="Primary">#6096B4</color>
+    <color name="Primary_dark">#93BFCF</color>
+
+    <color name="Primaryy">#1C2E46</color>
+    <color name="Primaryy_dark">#142232</color>
+    <color name="Primary_text">#212121</color>
+    <color name="Secondary_text">#757575</color>
+    <color name="input_background">#ECECEC</color>
+    <color name="icon_background">#20FFFFFF</color>
+    <color name="error">#B00020</color>
+    <color name="receved_message_background">#17504A</color>
+
+</resources>

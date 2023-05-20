@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layoutDirection="rtl"
+    tools:context=".view.DashBoardAdminActivity"
+    android:id="@+id/container"
+    >
+
+
+
+
+    <!-- Add Category -->
+
+    <!-- photo Category -->
+
+    <!--Toolbar-->
+<!--    <RelativeLayout-->
+<!--        android:id="@+id/toolbarRl"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="65dp"-->
+<!--        android:background="@drawable/shape_toolbar">-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/TitleTv"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_centerHorizontal="true"-->
+<!--            android:layout_marginTop="8dp"-->
+<!--            android:text="DashBoard Admin"-->
+<!--            android:textColor="@color/white"-->
+<!--            android:textStyle="bold" />-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/subTitleTv"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_below="@id/TitleTv"-->
+<!--            android:layout_centerHorizontal="true"-->
+<!--            android:text="abc@example.com"-->
+<!--            android:textColor="@color/white" />-->
+
+<!--        <ImageButton-->
+<!--            android:id="@+id/btnlogout"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_alignParentEnd="true"-->
+<!--            android:layout_centerVertical="true"-->
+<!--            android:layout_marginEnd="10dp"-->
+<!--            android:background="@drawable/logout"-->
+<!--            android:src="@drawable/logout" />-->
+
+
+<!--    </RelativeLayout>-->
+
+
+<!--    <EditText-->
+<!--        android:id="@+id/searchEt"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_below="@id/toolbarRl"-->
+<!--        android:layout_marginStart="10dp"-->
+<!--        android:layout_marginTop="10dp"-->
+<!--        android:layout_marginEnd="10dp"-->
+<!--        android:background="@color/white"-->
+<!--        android:drawableStart="@drawable/search"-->
+<!--        android:drawablePadding="10dp"-->
+<!--        android:hint="Search"-->
+<!--        android:padding="10dp"-->
+<!--        android:textColorHint="@color/gray" />-->
+
+<!--    <androidx.recyclerview.widget.RecyclerView-->
+<!--        android:id="@+id/categoriesRv"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:layout_below="@id/searchEt"-->
+<!--        android:layout_marginStart="5dp"-->
+<!--        android:layout_marginTop="5dp"-->
+<!--        android:layout_marginEnd="5dp"-->
+<!--        android:layout_marginBottom="5dp"-->
+<!--        android:padding="10dp"-->
+<!--        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"-->
+<!--        tools:listitem="@layout/row_category" />-->
+
+
+
+
+    <FrameLayout
+        android:id="@+id/frame_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </FrameLayout>
+
+
+
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="0dp"
+        android:layout_marginEnd="0dp"
+        android:background="@color/cPrimary"
+        app:itemIconTint="@color/white"
+        app:itemTextColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:menu="@menu/bottom_nav" />
+
+    <fragment
+        android:id="@+id/nav_host_fragment"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:defaultNavHost="true"
+        android:layout_marginBottom="57dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        app:navGraph="@navigation/nav_admin" />
+
+
+
+
+<!--    <Button-->
+<!--        android:id="@+id/addcategory"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_weight="1"-->
+<!--        android:background="@drawable/shape_toolbar"-->
+<!--        android:minHeight="50dp"-->
+<!--        android:text="+ Add Category"-->
+<!--        android:textAllCaps="false"-->
+<!--        android:textColor="@color/white"/>-->
+
+
+<!--    <me.ibrahimsn.lib.SmoothBottomBar-->
+<!--        android:id="@+id/bottomBar"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="56dp"-->
+<!--        app:backgroundColor="@color/colorPrimary"-->
+<!--        app:iconMargin="8dp"-->
+<!--        app:iconSize="24dp"-->
+<!--        app:indicatorRadius="15dp"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:menu="@menu/bottom_nav"-->
+<!--        tools:ignore="MissingClass" />-->
+
+
+
+
+<!--    <LinearLayout-->
+<!--        android:id="@+id/bottomLl"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:orientation="horizontal"-->
+<!--        android:layout_marginStart="10dp"-->
+<!--        android:layout_marginEnd="10dp"-->
+<!--        android:layout_alignParentBottom="true"-->
+<!--        android:layout_marginBottom="10dp">-->
+<!--        &lt;!&ndash; Edit Category &ndash;&gt;-->
+
+<!--        &lt;!&ndash; Add Category &ndash;&gt;-->
+<!--        <Button-->
+<!--            android:id="@+id/addcategory"-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_weight="1"-->
+<!--            android:background="@drawable/shape_toolbar"-->
+<!--            android:minHeight="50dp"-->
+<!--            android:layout_marginEnd="10dp"-->
+<!--            android:text="+ Add Category"-->
+<!--            android:textAllCaps="false"-->
+<!--            android:textColor="@color/white"-->
+<!--            />-->
+<!--    </LinearLayout>-->
+
+
+    <!-- Add pdf -->
+
+<!--        <com.google.android.material.floatingactionbutton.FloatingActionButton-->
+<!--            android:id="@+id/btnaddpdf"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:clickable="true"-->
+<!--            android:backgroundTint="@color/cPrimary"-->
+<!--            android:src="@drawable/pdf"-->
+<!--            android:visibility="visible"-->
+<!--            android:tint="@color/white"-->
+<!--            app:fabCustomSize="50dp"-->
+<!--            />-->
+
+
+<!--    <TextView-->
+<!--        android:id="@+id/txtresult"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="TextView"-->
+<!--        android:textSize="150sp"-->
+<!--        android:textStyle="bold" />-->
+
+</androidx.constraintlayout.widget.ConstraintLayout>

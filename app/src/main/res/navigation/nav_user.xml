@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_admin"
+    app:startDestination="@id/homeFragment_user">
+
+
+    <fragment
+        android:id="@+id/homeFragment_user"
+        android:name="com.example.finalcloudproject.user.HomeUserFragment"
+        android:label="fragment_home_user"
+        tools:layout="@layout/fragment_home_user" />
+    <fragment
+        android:id="@+id/profileFragment_user"
+        android:name="com.example.finalcloudproject.admin.ProfileAdminFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile_user" />
+    <fragment
+        android:id="@+id/searchFragment_user"
+        android:name="com.example.finalcloudproject.user.SearchFragment"
+        android:label="fragment_search"
+        tools:layout="@layout/fragment_search" />
+    <fragment
+        android:id="@+id/subsecribeFragment_user"
+        android:name="com.example.finalcloudproject.user.SubsecribeFragment"
+        android:label="fragment_subsecribe"
+        tools:layout="@layout/fragment_subsecribe" />
+    <fragment
+        android:id="@+id/chatFragment_user"
+        android:name="com.example.finalcloudproject.user.ChatUserFragment"
+        android:label="fragment_chat_user"
+        tools:layout="@layout/fragment_chat__user_" />
+</navigation>

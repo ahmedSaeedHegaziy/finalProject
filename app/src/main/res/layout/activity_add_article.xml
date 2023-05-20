@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layoutDirection="rtl"
+    tools:context=".view.AddTopicActivity">
+
+
+        <EditText
+            android:id="@+id/txtName"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="60dp"
+            android:layout_marginEnd="20dp"
+            android:ems="10"
+            android:hint="أسم المرض"
+            android:background="@drawable/edit_text_background"
+            android:padding="10dp"
+            android:inputType="textPersonName"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/txtDescription"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="20dp"
+            android:background="@drawable/edit_text_background"
+            android:ems="10"
+            android:hint="وصف المرض"
+            android:inputType="textPersonName"
+            android:padding="10dp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtName" />
+
+        <Button
+            android:id="@+id/btnAdd"
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:layout_marginBottom="50dp"
+            android:text="أضف التصنيف"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:backgroundTint="#03A9F4"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Button
+            android:id="@+id/bAddImg"
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:layout_marginStart="76dp"
+            android:layout_marginTop="32dp"
+            android:backgroundTint="#03A9F4"
+            android:text="أضف صورة"
+
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtDescription" />
+
+        <ImageView
+            android:id="@+id/img"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="36dp"
+            android:layout_marginTop="4dp"
+            app:layout_constraintStart_toStartOf="@+id/bAddImg"
+            app:layout_constraintTop_toBottomOf="@+id/bAddImg"
+            tools:src="@drawable/addimage" />
+
+        <Button
+            android:id="@+id/bAddVideo"
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:layout_marginStart="-235dp"
+            android:backgroundTint="#03A9F4"
+            android:text="أضف فيديو"
+            android:textColor="@color/white"
+
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintBaseline_toBaselineOf="@+id/bAddImg"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.733"
+            app:layout_constraintStart_toEndOf="@+id/bAddImg" />
+
+        <ImageView
+            android:id="@+id/imgVideo"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="36dp"
+            android:layout_marginTop="4dp"
+            app:layout_constraintStart_toStartOf="@+id/bAddVideo"
+            app:layout_constraintTop_toBottomOf="@+id/bAddVideo"
+            tools:src="@drawable/addvideo" />
+
+        <ImageView
+            android:id="@+id/img1"
+            tools:ignore="MissingConstraints"
+            android:layout_width="212dp"
+            android:layout_height="154dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="100dp"
+            android:visibility="invisible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/img"
+            tools:src="@tools:sample/avatars"
+            />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>

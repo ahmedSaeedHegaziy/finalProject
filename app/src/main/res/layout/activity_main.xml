@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layoutDirection="rtl"
+    tools:context=".view.MainActivity">
+
+<!--    <EditText-->
+<!--        android:id="@+id/txtusername"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:hint="Enter user name !"-->
+<!--        android:layout_margin="5dp"-->
+<!--        android:inputType="text"-->
+<!--        />-->
+<!--    <EditText-->
+<!--        android:id="@+id/txtemail"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:hint="Enter email !"-->
+<!--        android:layout_margin="5dp"-->
+<!--        android:inputType="text"-->
+<!--        />-->
+
+
+<!--    <androidx.viewpager2.widget.ViewPager2-->
+<!--        android:id="@+id/viewPager"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:layout_above="@+id/tabLayout">-->
+
+
+<!--    </androidx.viewpager2.widget.ViewPager2>-->
+
+<!--    <com.google.android.material.tabs.TabLayout-->
+<!--        android:id="@+id/tabLayout"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_alignParentBottom="true"-->
+<!--        android:background="@color/tabBackgroundColor"-->
+<!--        app:tabGravity="fill"-->
+<!--        app:tabIndicatorColor="@color/cPrimary"-->
+<!--        app:tabMaxWidth="0dp"-->
+<!--        app:tabMode="fixed">-->
+
+<!--        <com.google.android.material.tabs.TabItem-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:icon="@drawable/home" />-->
+
+<!--        <com.google.android.material.tabs.TabItem-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:icon="@drawable/search" />-->
+
+<!--        <com.google.android.material.tabs.TabItem-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:icon="@drawable/add" />-->
+
+<!--        <com.google.android.material.tabs.TabItem-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:icon="@drawable/account" />-->
+
+
+<!--    </com.google.android.material.tabs.TabLayout>-->
+
+
+<!--    <EditText-->
+<!--        android:id="@+id/txtpassword"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:hint="Enter Password !"-->
+<!--        android:layout_margin="5dp"-->
+<!--        android:inputType="text"-->
+<!--        />-->
+<!--    <EditText-->
+<!--        android:id="@+id/txtlevel"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:hint="Enter level of UN !"-->
+<!--        android:layout_margin="5dp"-->
+<!--        android:inputType="number"-->
+<!--        />-->
+<!--    <Button-->
+<!--        android:id="@+id/btnAdd"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="Add New User"-->
+<!--        android:backgroundTint="#716969"-->
+<!--        android:layout_margin="5dp"/>-->
+<!--&lt;!&ndash;    <Button&ndash;&gt;-->
+<!--&lt;!&ndash;        android:id="@+id/btngetallusers"&ndash;&gt;-->
+<!--&lt;!&ndash;        android:layout_width="match_parent"&ndash;&gt;-->
+<!--&lt;!&ndash;        android:layout_height="wrap_content"&ndash;&gt;-->
+<!--&lt;!&ndash;        android:text="Get all users"&ndash;&gt;-->
+<!--&lt;!&ndash;        android:backgroundTint="#716969"&ndash;&gt;-->
+<!--&lt;!&ndash;        android:layout_margin="5dp"/>&ndash;&gt;-->
+<!--    <Button-->
+<!--        android:id="@+id/btngetalluserslimitorder"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="Get all users by limit and order"-->
+<!--        android:backgroundTint="#716969"-->
+<!--        android:layout_margin="5dp"/>-->
+
+<!--&lt;!&ndash;    <Button&ndash;&gt;-->
+<!--&lt;!&ndash;        android:id="@+id/btngetalluserswhere"&ndash;&gt;-->
+<!--&lt;!&ndash;        android:layout_width="match_parent"&ndash;&gt;-->
+<!--&lt;!&ndash;        android:layout_height="wrap_content"&ndash;&gt;-->
+<!--&lt;!&ndash;        android:text="Get all users by where"&ndash;&gt;-->
+<!--&lt;!&ndash;        android:backgroundTint="#716969"&ndash;&gt;-->
+<!--&lt;!&ndash;        android:layout_margin="5dp"/>&ndash;&gt;-->
+<!--    <Button-->
+<!--        android:id="@+id/btndeletuser"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="delete user by id "-->
+<!--        android:backgroundTint="#716969"-->
+<!--        android:layout_margin="5dp"/>-->
+<!--    <Button-->
+<!--        android:id="@+id/btndeletuserfield"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="delete user field"-->
+<!--        android:backgroundTint="#716969"-->
+<!--        android:layout_margin="5dp"/>-->
+<!--    <Button-->
+<!--        android:id="@+id/btnupdate"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="Update "-->
+<!--        android:backgroundTint="#716969"-->
+<!--        android:layout_margin="5dp"/>-->
+
+<!--&lt;!&ndash;    <Button&ndash;&gt;-->
+<!--&lt;!&ndash;        android:id="@+id/btnchooseimage"&ndash;&gt;-->
+<!--&lt;!&ndash;        android:layout_width="match_parent"&ndash;&gt;-->
+<!--&lt;!&ndash;        android:layout_height="wrap_content"&ndash;&gt;-->
+<!--&lt;!&ndash;        android:text="Choose Image"&ndash;&gt;-->
+<!--&lt;!&ndash;        android:backgroundTint="#716969"&ndash;&gt;-->
+<!--&lt;!&ndash;        android:layout_margin="5dp"/>&ndash;&gt;-->
+
+
+<!--    <Button-->
+<!--        android:id="@+id/btnpro"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="profile"-->
+<!--        android:backgroundTint="#716969"-->
+<!--        android:layout_margin="5dp"/>-->
+<!--    <Button-->
+<!--            android:id="@+id/btnlogout"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="logout"-->
+<!--            android:backgroundTint="#716969"-->
+<!--            android:layout_margin="5dp"/>-->
+
+
+
+</RelativeLayout>

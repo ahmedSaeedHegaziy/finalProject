@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+   <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+     <item name="colorPrimary">@color/cPrimary</item>
+       <item name="colorPrimaryDark">@color/cPrimaryDark</item>
+       <item name="colorAccent">@color/cAccent</item>
+   </style>
+
+<!--<style name="CustomTabStyle" parent="TextAppearance.Design.CollapsingToolbar.Expanded">-->
+<!--    <item name=""-->
+<!--    -->
+<!--</style>-->
+
+
+
+
+
+
+
+
+
+
+
+</resources>
