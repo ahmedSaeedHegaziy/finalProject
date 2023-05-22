@@ -51,7 +51,7 @@ object Constants {
 
     ///////////////////////////////////////////////////////////////
     //const val KEY_COLLECTION_USERS = "users"
-    const val KEY_COLLECTION_USERS = "User_Care_App"
+    const val KEY_COLLECTION_USERS = "User"
 
     const val KEY_NAME = "fullName"
 

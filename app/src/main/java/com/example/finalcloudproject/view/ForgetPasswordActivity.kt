@@ -20,7 +20,7 @@ class ForgetPasswordActivity : BaseActivity() {
             val email :String = txtemailid.text.toString().trim{it <= ' '}
 
             if (email.isEmpty()){
-                showErrorSnackBar("الرجاء إدخال عنوان البريد الإلكتروني !!",true)
+                showErrorSnackBar("يرجى إدخال البريد الاكتروني !!",true)
             }else{
                 //لاسترجاع الباسورد
                 showProgressDialog("جاري التحميل...")
@@ -28,8 +28,8 @@ class ForgetPasswordActivity : BaseActivity() {
 
                     .addOnSuccessListener {
                         hideProgressDialog()
-                        //showErrorSnackBar("Email sent successfully to rest your password...",true)
-                        Toast.makeText(this,"تم إرسال البريد الإلكتروني بنجاح لراحة كلمة المرور الخاصة بك!", Toast.LENGTH_LONG).show()
+
+                        Toast.makeText(this,"تم إرسال البريد الإلكتروني بنجاح", Toast.LENGTH_LONG).show()
                         finish()
                     }
                     .addOnFailureListener {

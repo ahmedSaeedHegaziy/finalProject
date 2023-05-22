@@ -28,7 +28,6 @@ class SubsecribeFragment : Fragment() {
     private val binding get() = _binding!!
     lateinit var db: FirebaseFirestore
     lateinit var data: ArrayList<Category>
-    //private var progressDialog: ProgressDialog? = null
     private lateinit var progressDialog: Dialog
     lateinit var d: Activity
 
@@ -65,15 +64,13 @@ class SubsecribeFragment : Fragment() {
             .get()
             .addOnSuccessListener {
                 for (document in it) {
-//                    val idSubscribe1 = document.getString("idSubscribeCategory")
-//                    if (idSubscribe1 == idSubscribe) {
+
                     val id = document.id
                     val name = document.getString("name")
                     val description = document.getString("description")
                     val img = document.getString("img")
                     val imgName = document.getString("imgName")
                     val doctorName = document.getString("doctorName")
-//                    val isSubscribe = document.getString("isSubscribe")
 
                     val category = Category(
                         id,

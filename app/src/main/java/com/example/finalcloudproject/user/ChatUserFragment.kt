@@ -67,7 +67,6 @@ class ChatUserFragment : Fragment() , ConversationListeners {
     }
 
     private fun setListeners() {
-//        binding!!.imageSignOut.setOnClickListener { v: View? -> signOut() }
         binding!!.fabNewChat.setOnClickListener { v: View? ->
             startActivity(
                 Intent(
@@ -118,19 +117,6 @@ class ChatUserFragment : Fragment() , ConversationListeners {
         )
 
     }
-
-//    private fun updateToken(token: String) {
-//        val database = FirebaseFirestore.getInstance()
-//        val documentReference = database.collection(Constants.KEY_COLLECTION_USERS).document(
-//            preferanceManeger!!.getString(Constants.KEY_USER_ID)!!
-//        )
-//        documentReference
-//            .update(
-//                Constants.KEY_FCM_TOKEN,
-//                token
-//            ) //                .addOnSuccessListener(unused -> showToast("Token updated successfully"))
-//            .addOnFailureListener { e: Exception? -> showToast("Unable to update token") }
-//    }
 
     private val eventListener =
         EventListener { value: QuerySnapshot?, error: FirebaseFirestoreException? ->

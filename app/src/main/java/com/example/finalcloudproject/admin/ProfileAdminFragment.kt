@@ -23,7 +23,7 @@ import kotlinx.android.synthetic.main.fragment_profile_admin.*
 
 
 class ProfileAdminFragment : Fragment()
-//, TextWatcher
+
 {
     private var _binding: FragmentProfileAdminBinding? = null
     private val binding get() = _binding!!
@@ -56,12 +56,6 @@ class ProfileAdminFragment : Fragment()
         }
         getUserDetails()
 
-//        val callback = object : OnBackPressedCallback(true) {
-//            override fun handleOnBackPressed() {
-//                requireActivity().finish()
-//            }
-//        }
-//        requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner, callback)
 
         super.onViewCreated(view, savedInstanceState)
     }
@@ -111,7 +105,7 @@ class ProfileAdminFragment : Fragment()
             user.image,
             iv_user_photoo
         )
-        ////////////////////////////
+
         binding.address.text = user.address
         binding.birthOfDate.text = user.birthOfDate
         binding.tvEmail.text = user.email

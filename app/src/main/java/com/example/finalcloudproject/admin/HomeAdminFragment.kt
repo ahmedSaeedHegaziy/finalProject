@@ -25,7 +25,6 @@ class HomeAdminFragment : Fragment() {
     private val binding get() = _binding!!
     lateinit var db: FirebaseFirestore
     lateinit var data:ArrayList<Category>
-    //private var progressDialog: ProgressDialog? = null
     lateinit var d : Activity
     private lateinit var progressDialog: Dialog
 

@@ -23,12 +23,12 @@ import kotlinx.android.synthetic.main.fragment_profile_user.iv_user_photoo
 
 
 class ProfileUserFragment : Fragment()
-//, TextWatcher
 {
     private var _binding: FragmentProfileUserBinding? = null
     private val binding get() = _binding!!
     private lateinit var mUserDetails: User
     private lateinit var mProgressDialog: Dialog
+    //
     private val mFireStore = FirebaseFirestore.getInstance()
 
 
@@ -113,7 +113,6 @@ class ProfileUserFragment : Fragment()
             user.image,
             iv_user_photoo
         )
-        ////////////////////////////
         binding.address.text = user.address
         binding.birthOfDate.text = user.birthOfDate
         binding.tvEmail.text = user.email

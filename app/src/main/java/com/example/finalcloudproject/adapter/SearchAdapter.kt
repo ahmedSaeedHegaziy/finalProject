@@ -14,6 +14,7 @@ import com.squareup.picasso.Picasso
 
 class SearchAdapter(var activity: Activity, var data: ArrayList<Category>) :
     RecyclerView.Adapter<SearchAdapter.MyViewHolder>() {
+
     private var initialData = data
 
     class MyViewHolder(var binding: LayoutSearchViewBinding) :
@@ -26,18 +27,20 @@ class SearchAdapter(var activity: Activity, var data: ArrayList<Category>) :
     }
 
     override fun onBindViewHolder(holder: SearchAdapter.MyViewHolder, position: Int) {
+
         val db = FirebaseFirestore.getInstance()
+
         db.collection(Constants.CATEGORY).document(data[position].name)
             .get()
             .addOnSuccessListener {
                 Picasso.get().load(data[position].img).into(holder.binding.imgCategory)
-//                holder.binding.tvName.setText(it.getString("name"))
+
                 holder.binding.tvName.setText(data[position].name)
                 holder.binding.tvDescription.setText(data[position].description)
                 holder.binding.tvDoctorName.setText(data[position].doctorName)
             }
         holder.binding.cardView.setOnClickListener {
-            val sharedP=activity.getSharedPreferences("MyPref", Context.MODE_PRIVATE)
+            val sharedP = activity.getSharedPreferences("MyPref", Context.MODE_PRIVATE)
             val edit=sharedP!!.edit()
             edit.putString("idCategory",data[position].id)
             edit.apply()

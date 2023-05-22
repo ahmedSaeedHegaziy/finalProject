@@ -19,7 +19,6 @@ class DashBoardUserActivity : BaseActivity() {
         binding = ActivityDashBoardUserBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        //makeCurrentFragment(HomeUserFragment())
 
         binding.navView.setOnItemSelectedListener {
             when (it.itemId) {

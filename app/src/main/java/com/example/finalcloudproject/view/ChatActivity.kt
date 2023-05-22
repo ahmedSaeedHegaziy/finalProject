@@ -28,6 +28,7 @@ import java.util.Locale
 import java.util.Objects
 
 class ChatActivity : BaseActivity() {
+
     private var binding: ActivityChatBinding? = null
     private lateinit  var receiverUser: User
     private var chatMessages: MutableList<ChatMessage>? = null
@@ -43,16 +44,17 @@ class ChatActivity : BaseActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         binding = ActivityChatBinding.inflate(layoutInflater)
         setContentView(binding!!.root)
         loadReceiverDetails()
+
         setListeners()
         init()
         listenMessages()
         getUserDetails()
 
         if (intent.hasExtra(Constants.EXTRA_USER_DETAILS)) {
-            //Get the user dwtails from intent as a ParcelableExtra
             mUserDetails2 = intent.getParcelableExtra(Constants.EXTRA_USER_DETAILS)!!
         }
 
@@ -75,7 +77,8 @@ class ChatActivity : BaseActivity() {
         database!!.collection(Constants.KEY_COLLECTION_USERS).document(
             receiverUser.id
         )
-            .addSnapshotListener(this@ChatActivity) { value: DocumentSnapshot?, error: FirebaseFirestoreException? ->
+            .addSnapshotListener(this@ChatActivity) {
+                    value: DocumentSnapshot?, error: FirebaseFirestoreException? ->
                 if (error != null) {
                     return@addSnapshotListener
                 }
@@ -86,7 +89,7 @@ class ChatActivity : BaseActivity() {
                         )!!.toInt()
                         isReceiverAvailable = availability == 1
                     }
-//                    receiverUser!!.token = value.getString(Constants.KEY_FCM_TOKEN)
+
                 }
                 if (isReceiverAvailable) {
                     binding!!.textAvailability.visibility = View.VISIBLE
@@ -105,7 +108,6 @@ class ChatActivity : BaseActivity() {
                 Constants.KEY_SENDER_ID,
                 sharedPreferences.getString(Constants.KEY_USER_ID, null).toString()
 
-//                preferanceManeger!!.getString(Constants.KEY_USER_ID)
             )
             .whereEqualTo(Constants.KEY_RECEIVER_ID, receiverUser.id)
             .addSnapshotListener(eventListener)

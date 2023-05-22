@@ -14,6 +14,7 @@ import com.squareup.picasso.Picasso
 import java.io.Serializable
 
 class CategoryAdapter(var activity: Activity, var data: ArrayList<Category>):
+
     RecyclerView.Adapter<CategoryAdapter.MyViewHolder>(), Serializable {
     class MyViewHolder(var binding: LayoutViewAdminBinding) :
         RecyclerView.ViewHolder(binding.root)
@@ -42,7 +43,7 @@ class CategoryAdapter(var activity: Activity, var data: ArrayList<Category>):
             val edit=sharedP!!.edit()
             edit.putString("idCategory",data[position].id)
             edit.apply()
-            val i= Intent(activity, TopicsActivity::class.java)
+            val i = Intent(activity, TopicsActivity::class.java)
             activity.startActivity(i)
         }
 

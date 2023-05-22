@@ -23,7 +23,6 @@ class HomeUserFragment : Fragment() {
     private val binding get() = _binding!!
     lateinit var db: FirebaseFirestore
     lateinit var data:ArrayList<Category>
-    //private var progressDialog: ProgressDialog? = null
     private lateinit var progressDialog: Dialog
 
 
@@ -32,6 +31,7 @@ class HomeUserFragment : Fragment() {
 
 
     }
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -45,25 +45,16 @@ class HomeUserFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         db = Firebase.firestore
-       // d2=(activity as DashBoardUserActivity)
         data=ArrayList()
         showDialog("جار التحميل ...")
         getAllCategory()
-
-//                val callback = object : OnBackPressedCallback(true) {
-//            override fun handleOnBackPressed() {
-////                findNavController().navigate(R.id.action_fourthFragment_to_secondFragment)
-//               requireActivity().finish()
-//            }
-//        }
-//        requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner, callback)
 
     }
 
 
 
     fun getAllCategory(){
-        val sharedP =requireActivity().getSharedPreferences("MyPref", Context.MODE_PRIVATE)
+        val sharedP = requireActivity().getSharedPreferences("MyPref", Context.MODE_PRIVATE)
         val idSubscribeCategory = sharedP.getString("idSubscribeCategory", "0").toString()
 
         db.collection("Category")

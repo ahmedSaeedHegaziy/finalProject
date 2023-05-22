@@ -23,7 +23,7 @@ class NotificationsFragment : Fragment() {
     private val binding get() = _binding!!
     lateinit var db: FirebaseFirestore
     lateinit var data: ArrayList<Subscriber>
-    //private var progressDialog: ProgressDialog? = null
+
     private lateinit var progressDialog: Dialog
 
     override fun onCreateView(
@@ -54,7 +54,6 @@ class NotificationsFragment : Fragment() {
                     val imgName = document.getString("imgName")
                     val doctorName = document.getString("doctorName")
                     val userName = document.getString("userName")
-//                    val isSubscribe = document.getString("isSubscribe")
 
                     val notifications = Subscriber(
                         id,
@@ -64,11 +63,10 @@ class NotificationsFragment : Fragment() {
                         "",
                         "",
                         userName!!,
-//                        isSubscribe!!.toInt(),
                     )
                     data.add(notifications)
 
-                    // }
+
                 }
                 var notificationsUserAdapter = Notifications(requireActivity(), data)
                 binding.rvNotifications.layoutManager = LinearLayoutManager(requireActivity())

@@ -106,17 +106,15 @@ class EditArticleActivity : AppCompatActivity() {
                 fileImgURI1 = document.getString("img").toString()
                 fileVideoURI1 = document.getString("video").toString()
                 fileAudioURI1 = document.getString("audio").toString()
-                //binding.txtName.setText(document.getString("name"))
+
                 binding.txtDescription.setText(document.getString("description"))
                 binding.txtName.setText(document.getString("name"))
                 if (document.getString("img") != null) {
-                    binding.img.setImageResource(R.drawable.done)
+                    binding.img.setImageResource(R.drawable.ic_baseline_done_24)
                 }
-                if (document.getString("audio") != null) {
-                    binding.imgAudio.setImageResource(R.drawable.done)
-                }
+
                 if (document.getString("video") != null) {
-                    binding.imgVideo.setImageResource(R.drawable.done)
+                    binding.imgVideo.setImageResource(R.drawable.ic_baseline_done_24)
                 }
                 hideDialog()
             }
@@ -262,7 +260,7 @@ class EditArticleActivity : AppCompatActivity() {
         val baos = ByteArrayOutputStream()
         bitmap.compress(Bitmap.CompressFormat.PNG, 100, baos)
         val data = baos.toByteArray()
-        imgName = System.currentTimeMillis().toString() + "_omrimages.png"
+        imgName = System.currentTimeMillis().toString() + "_wimages.png"
         val childRef =
             imageRef.child(imgName)
         var uploadTask = childRef.putBytes(data)
@@ -303,7 +301,7 @@ class EditArticleActivity : AppCompatActivity() {
 
     fun uploadVideo(isAudio: Boolean) {
         videoName =
-            System.currentTimeMillis().toString() + "_omrvideos.mp4"
+            System.currentTimeMillis().toString() + "_wvideos.mp4"
         val childRef1 =
             videoRef.child(videoName)
         val uploadTask1 = childRef1.putFile(videoURI!!)
@@ -398,17 +396,6 @@ class EditArticleActivity : AppCompatActivity() {
         progressDialog.setCanceledOnTouchOutside(false)
     }
 
-//    private fun showDialog() {
-//        progressDialog = ProgressDialog(this@EditArticleActivity)
-//        progressDialog!!.setMessage("")
-//        progressDialog!!.setCancelable(false)
-//        progressDialog!!.show()
-//    }
-//
-//    private fun hideDialog() {
-//        if (progressDialog!!.isShowing)
-//            progressDialog!!.dismiss()
-//    }
 
 
 
@@ -417,21 +404,16 @@ class EditArticleActivity : AppCompatActivity() {
         if (requestCode == PICK_IMAGE_REQUEST && resultCode == Activity.RESULT_OK) {
             imageURI = data!!.data
             if (imageURI != null) {
-                binding.img.setImageResource(R.drawable.done)
+                binding.img.setImageResource(R.drawable.ic_baseline_done_24)
                 binding.img1.setImageURI(imageURI)
             }
         }
         if (requestCode == PICK_Video_REQUEST && resultCode == Activity.RESULT_OK) {
             videoURI = data!!.data
             if (videoURI != null) {
-                binding.imgVideo.setImageResource(R.drawable.done)
+                binding.imgVideo.setImageResource(R.drawable.ic_baseline_done_24)
             }
         }
-        if (requestCode == PICK_Audio_REQUEST && resultCode == Activity.RESULT_OK) {
-            audioURI = data!!.data
-            if (audioURI != null) {
-                binding.imgAudio.setImageResource(R.drawable.done)
-            }
-        }
+
     }
 }

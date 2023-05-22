@@ -27,20 +27,15 @@ class AddTopicActivity : AppCompatActivity() {
     lateinit var db: FirebaseFirestore
     private var fileImgURI: Uri? = null
     private var fileVideoURI: Uri? = null
-    private var fileAudioURI: Uri? = null
     private val PICK_IMAGE_REQUEST = 111
     private val PICK_Video_REQUEST = 222
-    private val PICK_Audio_REQUEST = 333
     var imageURI: Uri? = null
     var videoURI: Uri? = null
-    var audioURI: Uri? = null
     lateinit var imageRef: StorageReference
     lateinit var videoRef: StorageReference
-    lateinit var audioRef: StorageReference
     lateinit var storageRef: StorageReference
     lateinit var imgName: String
     lateinit var videoName: String
-    lateinit var audioName: String
     private lateinit var progressDialog: Dialog
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -53,7 +48,6 @@ class AddTopicActivity : AppCompatActivity() {
         storageRef = storage.reference
         imageRef = storageRef.child("images")
         videoRef = storageRef.child("videos")
-        audioRef = storageRef.child("audios")
 
         binding.bAddImg.setOnClickListener {
             selsectImg()
@@ -82,75 +76,7 @@ class AddTopicActivity : AppCompatActivity() {
         startActivityForResult(intent, PICK_Video_REQUEST)
     }
 
-    fun selsectAudio() {
-        val intent = Intent()
-        intent.action = Intent.ACTION_PICK
-        intent.type = "audio/*"
-        startActivityForResult(intent, PICK_Audio_REQUEST)
 
-    }
-
-    fun uploadArticle(
-        img: String,
-        imgName: String,
-        video: String,
-        videoName: String,
-        audio: String,
-        audioName: String
-    ) {
-        showDialog("تحميل المقال ...")
-        val name = binding.txtName.text.toString()
-        val description = binding.txtDescription.text.toString()
-        val sharedP = this.getSharedPreferences("MyPref", Context.MODE_PRIVATE)
-        val idCategory = sharedP.getString("idCategory", "0").toString()
-
-        if (name.isNotEmpty() && description.isNotEmpty() && imageURI != null && videoURI != null && audioURI != null) {
-            val article = Article(
-                "",
-                name,
-                description,
-                img,
-                video,
-                audio,
-                imgName,
-                videoName,
-                audioName,
-                idCategory
-            )
-            db.collection("Article")
-                .add(article)
-                .addOnSuccessListener {
-                    Toast.makeText(
-                        this,
-                        "تم التحميل!",
-                        Toast.LENGTH_SHORT
-                    )
-                        .show()
-                    binding.txtName.text.clear()
-                    binding.txtDescription.text.clear()
-                    hideDialog()
-                    val i= Intent(this, TopicsActivity::class.java)
-                    startActivity(i)
-                    finish()
-                }
-                .addOnFailureListener {
-                    Toast.makeText(
-                        this,
-                        " فشل التحميل${it.message}",
-                        Toast.LENGTH_SHORT
-                    )
-                        .show()
-                    hideDialog()
-                }
-        } else {
-            Toast.makeText(
-                this,
-                "أكمل البيانات!",
-                Toast.LENGTH_SHORT
-            ).show()
-            hideDialog()
-        }
-    }
 
     fun uploadImg() {
         showDialog("تحميل المقال ...")
@@ -158,7 +84,7 @@ class AddTopicActivity : AppCompatActivity() {
         val baos = ByteArrayOutputStream()
         bitmap.compress(Bitmap.CompressFormat.PNG, 100, baos)
         val data = baos.toByteArray()
-        imgName = System.currentTimeMillis().toString() + "_omrimages.png"
+        imgName = System.currentTimeMillis().toString() + "_wimages.png"
         val childRef =
             imageRef.child(imgName)
         var uploadTask = childRef.putBytes(data)
@@ -184,7 +110,7 @@ class AddTopicActivity : AppCompatActivity() {
 
     fun uploadVideo() {
         videoName =
-            System.currentTimeMillis().toString() + "_omrvideos.mp4"
+            System.currentTimeMillis().toString() + "_wvideos.mp4"
         val childRef1 =
             videoRef.child(videoName)
         val uploadTask1 = childRef1.putFile(videoURI!!)
@@ -231,14 +157,14 @@ class AddTopicActivity : AppCompatActivity() {
         if (requestCode == PICK_IMAGE_REQUEST && resultCode == Activity.RESULT_OK) {
             imageURI = data!!.data
             if (imageURI != null) {
-                binding.img.setImageResource(R.drawable.done)
+                binding.img.setImageResource(R.drawable.ic_baseline_done_24)
                 binding.img1.setImageURI(imageURI)
             }
         }
         if (requestCode == PICK_Video_REQUEST && resultCode == Activity.RESULT_OK) {
             videoURI = data!!.data
             if (videoURI != null) {
-                binding.imgVideo.setImageResource(R.drawable.done)
+                binding.imgVideo.setImageResource(R.drawable.ic_baseline_done_24)
             }
         }
 

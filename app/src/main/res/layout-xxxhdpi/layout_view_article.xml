@@ -96,48 +96,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="15dp"
             android:orientation="horizontal"
-            app:layout_constraintTop_toBottomOf="@+id/image">
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/constraintLayout"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@drawable/theme_button"
-                android:backgroundTint="@color/login_from_details_light"
-                android:paddingStart="20dp"
-                android:paddingTop="5dp"
-                android:paddingEnd="20dp"
-                android:paddingBottom="8dp"
-                app:layout_constraintCircleRadius="@dimen/cardview_compat_inset_shadow"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/image">
-
-                <ImageView
-                    android:id="@+id/imgPlay"
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.5"
-                    app:srcCompat="@drawable/ic_play_arrow_black_24dp" />
-
-                <ImageView
-                    android:id="@+id/imgVoice"
-                    android:layout_width="37dp"
-                    android:layout_height="37dp"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:srcCompat="@drawable/voice"
-                    tools:ignore="MissingConstraints"
-                    tools:layout_editor_absoluteX="281dp"
-                    tools:layout_editor_absoluteY="6dp" />
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-        </LinearLayout>
+            app:layout_constraintTop_toBottomOf="@+id/image"/>
 
 
         <androidx.constraintlayout.widget.ConstraintLayout

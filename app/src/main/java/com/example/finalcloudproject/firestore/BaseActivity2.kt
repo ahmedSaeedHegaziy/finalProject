@@ -10,10 +10,13 @@ import com.google.firebase.firestore.FirebaseFirestore
 
  class BaseActivity2 : AppCompatActivity() {
     private var documentReference: DocumentReference? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         val preferanceManeger = PreferanceManeger(applicationContext)
         val database = FirebaseFirestore.getInstance()
+
         documentReference = database.collection(Constants.KEY_COLLECTION_USERS)
             .document(preferanceManeger.getString(Constants.KEY_USER_ID).toString())
     }

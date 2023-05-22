@@ -58,11 +58,6 @@ class DashBoardAdminActivity : BaseActivity()
 }
 
 
-//        btnback.setOnClickListener {
-//            //onBackPressed()
-//            val i = Intent(this, signin::class.java)
-//            startActivity(i)
-//        }
 
 
 

@@ -49,8 +49,7 @@ class ChatAdminFragment : Fragment(), ConversationListeners {
 
         preferanceManeger = PreferanceManeger(requireContext())
         init()
-        //loadUserDetails()
-        //token
+
         getUserDetails()
         setListeners()
         listenConversations()
@@ -72,7 +71,6 @@ class ChatAdminFragment : Fragment(), ConversationListeners {
     }
 
     private fun setListeners() {
-//        binding!!.imageSignOut.setOnClickListener { v: View? -> signOut() }
         binding!!.fabNewChat.setOnClickListener { v: View? ->
             startActivity(
                 Intent(
@@ -133,8 +131,7 @@ class ChatAdminFragment : Fragment(), ConversationListeners {
             .update(
                 Constants.KEY_FCM_TOKEN,
                 token
-            ) //                .addOnSuccessListener(unused -> showToast("Token updated successfully"))
-//            .addOnFailureListener { e: Exception? -> showToast("Unable to update token") }
+            )
     }
 
     private val eventListener =

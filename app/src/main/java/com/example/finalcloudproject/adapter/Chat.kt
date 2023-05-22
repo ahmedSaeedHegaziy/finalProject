@@ -11,10 +11,10 @@ import com.example.finalcloudproject.utils.GlideLoader
 
 
 class Chat(
+
     val context: Context,
     private val chatMessages: List<ChatMessage>,
-    //private val receiverProfileImage: Bitmap,
-//    private val receiverProfileImage: Unit,
+
 
     private val senderId: String
 ) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
@@ -24,6 +24,7 @@ class Chat(
                 ItemContanerSendMessageBinding.inflate(
                     LayoutInflater.from(parent.context),
                     parent,
+
                     false
                 )
             )
@@ -46,7 +47,6 @@ class Chat(
             (holder as ReceivedMessageViewHolder).setData(
                 chatMessages[position],
 
-                //receiverProfileImage
             )
         }
     }
@@ -78,13 +78,11 @@ class Chat(
             binding.root
         ) {
         fun setData(chatMessage: ChatMessage
-                    //, receiverProfileImage: String?
-                    //,user: User
+
         ) {
             binding.textMessage.text = chatMessage.message
             binding.textDateTime.text = chatMessage.dateTime
-//            binding.imageProfile.setImageBitmap(receiverProfileImage)
-            //  Picasso.get().load(chatMessages[position].img).into(binding.imageProfile)
+
             GlideLoader(context).loadUserPicture(
                 chatMessage.conversationImage!!,
                 binding.imageProfile

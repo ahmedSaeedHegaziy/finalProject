@@ -27,15 +27,7 @@ class LoginActivity : BaseActivity(), View.OnClickListener {
 
         supportActionBar?.hide()
 
-//        ShowPassword.setOnClickListener {
-//            if (ShowPassword.text.toString().equals("Show")) {
-//                txtpasswordS.transformationMethod = HideReturnsTransformationMethod.getInstance()
-//                ShowPassword.text = "Hide"
-//            } else {
-//                txtpasswordS.transformationMethod = PasswordTransformationMethod.getInstance()
-//                ShowPassword.text = "Show"
-//            }
-//        }
+
 
         txtForgetPassword.setOnClickListener(this)
         btnReg.setOnClickListener(this)
@@ -53,7 +45,8 @@ class LoginActivity : BaseActivity(), View.OnClickListener {
         return currentUserID
     }
 
-    fun userLoggedInSuccess(user: User) {/////////////////////////////////////////////////////////////////////////////////herreeeeeeeeeeeeeeeee
+    fun userLoggedInSuccess(user: User) {
+
         hideProgressDialog()
 
         if (user.profileCompleted == 0) {

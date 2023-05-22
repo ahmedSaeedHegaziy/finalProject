@@ -29,6 +29,7 @@ import java.io.ByteArrayOutputStream
 
 class
 EditCategoryFragment : Fragment(), java.io.Serializable {
+
     private var _binding: FragmentEditCategoryBinding? = null
     private val binding get() = _binding!!
     lateinit var db: FirebaseFirestore
@@ -44,7 +45,7 @@ EditCategoryFragment : Fragment(), java.io.Serializable {
     lateinit var description: String
     lateinit var doctorName: String
     lateinit var id: String
-    //private var progressDialog: ProgressDialog? = null
+
     private lateinit var progressDialog: Dialog
 
     override fun onCreateView(
@@ -64,6 +65,7 @@ EditCategoryFragment : Fragment(), java.io.Serializable {
         val storage = Firebase.storage
         storageRef = storage.reference
         imageRef = storageRef.child("images")
+
         getCategory()
         EditCategoy()
         binding.btnDelete.setOnClickListener {
@@ -94,6 +96,7 @@ EditCategoryFragment : Fragment(), java.io.Serializable {
 
     fun getCategory() {
         val sharedP = d.getSharedPreferences("MyPref", Context.MODE_PRIVATE)
+
         id = sharedP.getString("idCategory", "0").toString()
         db.collection("Category").document(id).get()
             .addOnSuccessListener {
@@ -130,7 +133,7 @@ EditCategoryFragment : Fragment(), java.io.Serializable {
                 val baos = ByteArrayOutputStream()
                 bitmap.compress(Bitmap.CompressFormat.PNG, 100, baos)
                 val data = baos.toByteArray()
-                val imgName2 = System.currentTimeMillis().toString() + "_omrimages.png"
+                val imgName2 = System.currentTimeMillis().toString() + "_wimages.png"
                 val childRef =
                     imageRef.child(imgName2)
                 var uploadTask = childRef.putBytes(data)
@@ -201,12 +204,7 @@ EditCategoryFragment : Fragment(), java.io.Serializable {
         progressDialog!!.setCancelable(false)
         progressDialog!!.setCanceledOnTouchOutside(false)
         progressDialog!!.show()
-
-//        progressDialog = ProgressDialog(MainActivity@ d)
-//        progressDialog!!.setMessage("تحميل التصنيف ...")
-//        progressDialog!!.setCancelable(false)
-//        progressDialog!!.show()
-    }
+            }
 
     private fun hideDialog() {
         if (progressDialog.isShowing)

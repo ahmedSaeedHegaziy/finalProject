@@ -20,12 +20,11 @@ import kotlinx.android.synthetic.main.dialog_progress.*
 
 
 class SearchFragment : Fragment() {
+    
     private var _binding: FragmentSearchBinding? = null
     private val binding get() = _binding!!
     lateinit var db: FirebaseFirestore
-//    lateinit var d: Activity
     lateinit var data:ArrayList<Category>
-    //private var progressDialog: ProgressDialog? = null
     private lateinit var progressDialog: Dialog
 
     override fun onCreateView(
@@ -38,12 +37,12 @@ class SearchFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         db = FirebaseFirestore.getInstance()
-//        d = (activity as DashBoardAdminActivity)
+        
         data= ArrayList<Category>()
-        getAllProduct()
+        getAllCategory()
     }
 
-    private fun getAllProduct() {
+    private fun getAllCategory() {
         showDialog("جاري التحميل ...")
         db.collection(Constants.CATEGORY)
             .get()
@@ -75,7 +74,6 @@ class SearchFragment : Fragment() {
 
                         override fun afterTextChanged(s: Editable?) {
                             val text = s.toString()
-                            //(binding.list.adapter as RecAdapter).search(text)
                             binding.etSearch2.clearFocus()
                         }
                     })

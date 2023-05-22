@@ -34,7 +34,7 @@ class FireStoreClass {
                 activity.hideProgressDialog()
                 Toast.makeText(
                     activity.applicationContext,
-                    "Error while registering the user !!",
+                    " فشلت عملية التسجيل",
                     Toast.LENGTH_SHORT
                 ).show()
             }
@@ -58,7 +58,6 @@ class FireStoreClass {
             .addOnSuccessListener { document ->
 
                 if (document != null) {
-                    Log.i(activity.javaClass.simpleName, document.toString())
                     val user = document.toObject(User::class.java)!!
 
                     val sharedPreferences = activity.getSharedPreferences(
@@ -96,7 +95,8 @@ class FireStoreClass {
             .addOnSuccessListener {
                 when (activity) {
                     is UserProfileActivity -> {
-                        activity.userProfileUpdateSuccess()//  هادي الدالة اللي عملتها بصفحة البروفايل
+                        activity.userProfileUpdateSuccess()
+
                     }
                 }
             }
@@ -106,7 +106,7 @@ class FireStoreClass {
                         activity.hideProgressDialog()
                     }
                 }
-                Log.e(activity.javaClass.simpleName, "Error while updating the user details.", e)
+                Toast.makeText(activity.applicationContext, "فشل عملية تحديث البروفايل", Toast.LENGTH_SHORT).show()
             }
     }
 
@@ -127,9 +127,9 @@ class FireStoreClass {
                 taskSnapshot.metadata!!.reference!!.downloadUrl
 
                     .addOnSuccessListener { uri ->
-                        Log.e("Download Image URL", uri.toString())
                         when (activity) {
                             is UserProfileActivity -> {
+
                                 activity.imageUploadSuccess(uri.toString())
                             }
                         }
@@ -140,7 +140,6 @@ class FireStoreClass {
                                 activity.hideProgressDialog()
                             }
                         }
-                        Log.e(activity.javaClass.simpleName, e.message, e)
                     }
             }
     }

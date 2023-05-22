@@ -41,9 +41,7 @@ class User(
         fun setUserData(user: User) {
             binding.textName.text = user.fullName
             binding.textEmail.text = user.email
-//
-//            binding.imageProfile.setImageBitmap(user.image?.let {
-//                getUserImage(it) })
+
 
             GlideLoader(context).loadUserPicture(
                 user.image,
@@ -52,10 +50,6 @@ class User(
             binding.root.setOnClickListener { v: View? -> userLesteners.onUserClicked(user) }
         }
 
-        private fun getUserImage(encodedImage: String): Bitmap {
-            val bytes = Base64.decode(encodedImage, Base64.DEFAULT)
-            return BitmapFactory.decodeByteArray(bytes, 0, bytes.size)
-        }
     }
 
 

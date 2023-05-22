@@ -33,7 +33,7 @@
             android:name=".firestore.BaseActivity2"
             android:exported="false" />
         <activity
-            android:name=".view.ArticlesActivityUser"
+            android:name=".view.TopicsActivityUser"
             android:exported="false" />
         <activity
             android:name=".view.EditArticleActivity"

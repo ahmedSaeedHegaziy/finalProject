@@ -1,6 +1,5 @@
 package com.example.finalcloudproject.admin
 
-import android.annotation.SuppressLint
 import android.app.Activity
 import android.app.Dialog
 import android.content.Intent
@@ -25,14 +24,13 @@ import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.ktx.storage
 import kotlinx.android.synthetic.main.dialog_progress.*
-import kotlinx.android.synthetic.main.fragment_profile_admin.*
 import java.io.ByteArrayOutputStream
 
 class AddCategoryFragment : Fragment() {
+
     private var _binding: FragmentAddCategoryBinding? = null
     private val binding get() = _binding!!
     lateinit var db: FirebaseFirestore
-    //private var progressDialog: ProgressDialog? = null
     private lateinit var progressDialog: Dialog
 
     private var fileURI: Uri? = null
@@ -52,7 +50,9 @@ class AddCategoryFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+
         super.onViewCreated(view, savedInstanceState)
+
         db = Firebase.firestore
         val storage = Firebase.storage
         val storageRef = storage.reference
@@ -63,6 +63,7 @@ class AddCategoryFragment : Fragment() {
             intent.action = Intent.ACTION_PICK
             intent.type = "image/*"
             startActivityForResult(intent, PICK_IMAGE_REQUEST)
+
         }
         getUserDetails()
         binding.btnAdd.setOnClickListener {
@@ -77,7 +78,7 @@ class AddCategoryFragment : Fragment() {
                 val baos = ByteArrayOutputStream()
                 bitmap.compress(Bitmap.CompressFormat.PNG, 100, baos)
                 val data = baos.toByteArray()
-                val imgName = System.currentTimeMillis().toString() + "_omrimages.png"
+                val imgName = System.currentTimeMillis().toString() + "_wimages.png"
                 val childRef =
                     imageRef.child(imgName)
                 var uploadTask = childRef.putBytes(data)
@@ -112,7 +113,6 @@ class AddCategoryFragment : Fragment() {
                                         (d as DashBoardAdminActivity).makeCurrentFragment(
                                             HomeAdminFragment()
                                         )
-                                        //(d as MainActivity).makeCurrentFragment(CategoryFragment())
 
                                     }
                                     .addOnFailureListener {
@@ -174,21 +174,16 @@ class AddCategoryFragment : Fragment() {
         progressDialog!!.setCanceledOnTouchOutside(false)
         progressDialog!!.show()
 
-//        progressDialog = ProgressDialog(MainActivity@ d)
-//        progressDialog!!.setMessage("تحميل التصنيف ...")
-//        progressDialog!!.setCancelable(false)
-//        progressDialog!!.show()
+
     }
 
-    @SuppressLint("SuspiciousIndentation")
     private fun hideDialog() {
         if (progressDialog.isShowing)
         progressDialog.dismiss()
         progressDialog.setCancelable(false)
         progressDialog.setCanceledOnTouchOutside(false)
 
-//        if (progressDialog!!.isShowing)
-//            progressDialog!!.dismiss()
+
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {

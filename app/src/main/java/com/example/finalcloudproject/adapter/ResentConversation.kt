@@ -16,9 +16,11 @@ import com.example.finalcloudproject.utils.GlideLoader
 
 
 class ResentConversation(
+
     val context: Context,
     private val chatMessages: List<ChatMessage>,
     private val conversionListener: ConversationListeners
+
 ) : RecyclerView.Adapter<ConversionViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ConversionViewHolder {
         return ConversionViewHolder(
@@ -42,11 +44,7 @@ class ResentConversation(
             binding.root
         ) {
         fun setData(chatMessage: ChatMessage) {
-//            binding.imageProfile.setImageBitmap(chatMessage.conversationImage?.let {
-//                getConversionImage(
-//                    it
-//                )
-//            })
+
             binding.textName.text = chatMessage.conversationName
             binding.textRecentMessage.text = chatMessage.message
             binding.textlastMsTime.text = chatMessage.dateTime?.substring(5) ?: "2:04 pm"
@@ -63,9 +61,5 @@ class ResentConversation(
             }
         }
 
-        private fun getConversionImage(encodedImage: String): Bitmap {
-            val bytes = Base64.decode(encodedImage, Base64.DEFAULT)
-            return BitmapFactory.decodeByteArray(bytes, 0, bytes.size)
-        }
     }
 }

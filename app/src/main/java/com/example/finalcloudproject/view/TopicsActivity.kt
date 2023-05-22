@@ -9,7 +9,7 @@ import android.view.View
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.finalcloudproject.R
-import com.example.finalcloudproject.adapter.TopicAdapter
+import com.example.finalcloudproject.adapter.TopicAdapterDoctor
 import com.example.finalcloudproject.databinding.ActivityArticlesBinding
 import com.example.finalcloudproject.model.Article
 import com.example.finalcloudproject.model.User
@@ -81,9 +81,9 @@ class TopicsActivity : AppCompatActivity() {
                         data.add(article)
                     }
                 }
-                var topicAdapter = TopicAdapter(this, data)
+                var topicAdapterDoctor = TopicAdapterDoctor(this, data)
                 binding.rv.layoutManager = LinearLayoutManager(this)
-                binding.rv.adapter = topicAdapter
+                binding.rv.adapter = topicAdapterDoctor
                 hideDialog()
             }
             .addOnFailureListener {

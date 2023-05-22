@@ -3,9 +3,7 @@ package com.example.finalcloudproject.adapter
 import android.app.Activity
 import android.content.Context
 import android.content.Intent
-import android.media.MediaPlayer
 import android.view.ViewGroup
-import android.widget.ImageView
 import androidx.core.net.toUri
 import androidx.recyclerview.widget.RecyclerView
 import com.example.finalcloudproject.R
@@ -15,8 +13,9 @@ import com.example.finalcloudproject.view.EditArticleActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.squareup.picasso.Picasso
 
-class TopicAdapter(var activity: Activity, var data: ArrayList<Article>) :
-    RecyclerView.Adapter<TopicAdapter.MyViewHolder>() {
+class TopicAdapterDoctor(var activity: Activity, var data: ArrayList<Article>) :
+
+    RecyclerView.Adapter<TopicAdapterDoctor.MyViewHolder>() {
     class MyViewHolder(var binding: LayoutViewArticleBinding) :
         RecyclerView.ViewHolder(binding.root)
 
@@ -27,42 +26,24 @@ class TopicAdapter(var activity: Activity, var data: ArrayList<Article>) :
     }
 
 
-    lateinit var playIcon: ImageView
-    lateinit var mMediaPlayer: MediaPlayer
-    lateinit var voice: String
-    override fun onBindViewHolder(holder: MyViewHolder, p: Int) {
-        voice = data[p].audio
-        playIcon = holder.binding.imgPlay
-        holder.binding.tv.setText(data[p].description)
-        holder.binding.tv2.setText(data[p].name)
-        Picasso.get().load(data[p].img).into(holder.binding.image)
-        voices(holder, p)
-        video(holder, p)
+    override fun onBindViewHolder(holder: MyViewHolder, re: Int) {
+
+        holder.binding.tv.setText(data[re].description)
+        holder.binding.tv2.setText(data[re].name)
+        Picasso.get().load(data[re].img).into(holder.binding.image)
+        video(holder, re)
         holder.binding.tvEdit.setOnClickListener {
             val sharedP = activity.getSharedPreferences("MyPref", Context.MODE_PRIVATE)
             val edit = sharedP!!.edit()
-            edit.putString("idArticle", data[p].id)
+            edit.putString("idArticle", data[re].id)
             edit.apply()
-//            (activity as ArticlesActivity).makeCurrentFragment(EditArticleFragment())
+
             val i = Intent(activity, EditArticleActivity::class.java)
             activity.startActivity(i)
             activity.finish()
         }
 
-//        FirebaseFirestore.getInstance().collection(Constants.USERS)
-//            .document(getCurrentUserID())
-//            .get()
-//            .addOnSuccessListener { document ->
-//                val user = document.toObject(User::class.java)!!
-//                if (user.userType == "Doctor") {
-//                    holder.binding.tvEdit.visibility = View.VISIBLE
-//                } else if (user.userType == "Sick") {
-//                    holder.binding.tvEdit.visibility = View.INVISIBLE
-//                }
-//                else {
-//                    holder.binding.tvEdit.visibility = View.INVISIBLE
-//                }
-//            }
+
     }
 
 
@@ -80,23 +61,6 @@ class TopicAdapter(var activity: Activity, var data: ArrayList<Article>) :
     }
 
 
-    fun voices(holder: MyViewHolder, p: Int) {
-        mMediaPlayer = MediaPlayer()
-        holder.binding.imgPlay.setOnClickListener {
-            if (!mMediaPlayer.isPlaying) {
-                mMediaPlayer = MediaPlayer.create(activity, data[p].audio.toUri())
-            }
-            if (mMediaPlayer != null && !mMediaPlayer.isPlaying) {
-                mMediaPlayer.start()
-                holder.binding.imgPlay.setImageResource(R.drawable.ic_pause_black_24dp)
-            } else {
-                mMediaPlayer.stop()
-                holder.binding.imgPlay.setImageResource(R.drawable.ic_play_arrow_black_24dp)
-
-            }
-        }
-
-    }
 
     fun getCurrentUserID(): String {
 
