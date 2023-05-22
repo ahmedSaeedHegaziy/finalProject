@@ -8,7 +8,7 @@
     android:layout_gravity="center"
     android:layoutDirection="rtl"
     android:gravity="center"
-    tools:context=".admin.HomeAdminFragment">
+    tools:context=".doctor.HomeAdminFragment">
 
 <!--    <SearchView-->
 <!--        android:id="@+id/search"-->

@@ -22,7 +22,6 @@ class ForgetPasswordActivity : BaseActivity() {
             if (email.isEmpty()){
                 showErrorSnackBar("يرجى إدخال البريد الاكتروني !!",true)
             }else{
-                //لاسترجاع الباسورد
                 showProgressDialog("جاري التحميل...")
                 FirebaseAuth.getInstance().sendPasswordResetEmail(email)
 

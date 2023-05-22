@@ -36,7 +36,7 @@ class RegisterActivity : BaseActivity() {
         }
 
         txtBirthOfDate.setOnClickListener {
-            val currentDate = Calendar.getInstance() //  عشان يعرض التاريخ الي موجو بالايميليتور
+            val currentDate = Calendar.getInstance()
             val day = currentDate.get(Calendar.DAY_OF_MONTH)
             val month = currentDate.get(Calendar.MONTH)
             val year = currentDate.get(Calendar.YEAR)
@@ -44,20 +44,19 @@ class RegisterActivity : BaseActivity() {
                 this,
                 DatePickerDialog.OnDateSetListener { datePicker, y, m, d ->
                     txtBirthOfDate.setText(" $y / ${m + 1} / $d ")
-                    //  m +1  عشان احل مشكلة اللي بينقص شهر عشان بيعد من الصفر
+
                 },
                 year,
                 month,
                 day
-            ) // يوم شهر سنة
-            picker.show() // عشان اظهرها
+            )
+            picker.show()
         }
 
     }
 
     private var fullName = ""
 
-    //private var birthOfDate = ""
     private var mobilePhone = ""
     private var email = ""
     private var pass = ""
@@ -73,14 +72,14 @@ class RegisterActivity : BaseActivity() {
         val confirmpass = txtconfirmpassword.text.toString().trim { it <= ' ' }
 
         if (fullName.isEmpty()) {
-            showErrorSnackBar("أدخل الاسم كاملا", true)
+            showErrorSnackBar("الرجاء أدخل الاسم كاملا", true)
 
         } else if (birthOfDate.isEmpty()) {
-            showErrorSnackBar("أدخل تاريخ الميلاد", true)
+            showErrorSnackBar("الرجاء أدخل تاريخ الميلاد", true)
         } else if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
             showErrorSnackBar("نمط البريد الإلكتروني غير صالح", true)
         } else if (mobilePhone.isEmpty()) {
-            showErrorSnackBar("أدخل رقم الهاتف", true)
+            showErrorSnackBar("أدخل رقم الهاتف ", true)
         } else if (pass.isEmpty()) {
             showErrorSnackBar("أدخل كلمة المرور", true)
 

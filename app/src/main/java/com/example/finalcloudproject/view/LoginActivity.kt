@@ -123,9 +123,9 @@ class LoginActivity : BaseActivity(), View.OnClickListener {
 
 
         if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
-            showErrorSnackBar("نمط البريد الإلكتروني غير صالح...", true)
+            showErrorSnackBar(" خطأ في البريد الالكتروني", true)
         } else if (password.isEmpty()) {
-            showErrorSnackBar("كلمة المرور غير صالحة...", true)
+            showErrorSnackBar("خطأ في كلمة المرور", true)
 
         } else {
             loginUser()
@@ -150,40 +150,5 @@ class LoginActivity : BaseActivity(), View.OnClickListener {
             }
     }
 
-    private fun checkUser() {
-
-        //  val firebaseUser: FirebaseUser = it.user!!
-
-        val firebaseUser2 = firebaseAuth.currentUser!!
-
-        val db = FirebaseFirestore.getInstance().collection(Constants.USERS)
-        db.document(firebaseUser2.uid)
-        val ref = FirebaseDatabase.getInstance().getReference("Users")
-        ref.child(firebaseUser2.uid)
-            .addListenerForSingleValueEvent(object : ValueEventListener {
-
-                override fun onDataChange(snapshot: DataSnapshot) {
-                    val userType = snapshot.child("userType").value
-
-                    if (userType == "user") {
-                        val i = Intent(this@LoginActivity, DashBoardUserActivity::class.java)
-                        startActivity(i)
-                        // startActivity(Intent(this@signin,DashBoardUserActivity::class.java))
-                        finish()
-                    } else if (userType == "admin") {
-
-                        val i = Intent(this@LoginActivity, DashBoardAdminActivity::class.java)
-                        startActivity(i)
-                        finish()
-
-                    }
-                }
-
-                override fun onCancelled(error: DatabaseError) {
-                }
-
-            })
-
-    }
 
 }

@@ -49,17 +49,12 @@ class TopicsActivity : AppCompatActivity() {
 
 
     }
-//    fun makeCurrentFragment(fragment: Fragment) {
-//        supportFragmentManager.beginTransaction().apply {
-//            replace(R.id.container2, fragment).addToBackStack(null)
-//            commit()
-//        }
-//    }
+
 
 
     fun getAllArticles(){
         val sharedP =this.getSharedPreferences("MyPref", Context.MODE_PRIVATE)
-//        id = sharedP.getString("idArticle", "0").toString()
+
         val idCategory = sharedP.getString("idCategory", "0").toString()
 
         db.collection("Article")

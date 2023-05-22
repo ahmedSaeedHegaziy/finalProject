@@ -28,7 +28,6 @@ class SplachActivity : AppCompatActivity() {
         Handler().postDelayed(
             {
                 checkUser()
-                //checkConn()
             }, 1000
         )
     }
@@ -93,73 +92,5 @@ class SplachActivity : AppCompatActivity() {
         }
     }
 
-    fun checkConn() {
-        //For Connection
-        val connManager = this.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
-        val wifiConn = connManager.getNetworkInfo(ConnectivityManager.TYPE_MOBILE)
-        val mobileDataConn = connManager.getNetworkInfo(ConnectivityManager.TYPE_MOBILE)
-        if (wifiConn!!.isConnectedOrConnecting) {
-            Toast.makeText(this, "Wifi Conected", Toast.LENGTH_SHORT).show()
-        } else {
-            Toast.makeText(this, "Wifi Disconected", Toast.LENGTH_SHORT).show()
-        }
-        if (mobileDataConn!!.isConnectedOrConnecting) {
-            Toast.makeText(this, "mobileData Conected", Toast.LENGTH_SHORT).show()
-        } else {
-            Toast.makeText(this, "mobileData Disconected", Toast.LENGTH_SHORT).show()
-        }
-    }
+
 }
-
-
-//        firebaseAuth = FirebaseAuth.getInstance()
-//
-//        //        val i =Intent(this,MainActivity::class.java)
-//       //        startActivity(i) هيك مش حتلحق تبين الواجهة وحينقلني عالمين اكتفتي
-//        Handler().postDelayed({
-////            val i =Intent(this,signin::class.java)
-////            startActivity(i)
-////            finish()// عشان لما اعمل رجوع ما يرجعنيي على  splach
-//              checkUser()
-//        },1000)
-//    // حيجيب واجهة السبلاش سكرين لمدة 5 ث وبعدين حيوديني للواجهة
-//
-//
-//    }
-//
-//    private fun checkUser() {
-//
-//       val firebaseUser =firebaseAuth.currentUser
-//        if (firebaseUser == null ){
-//            val i =Intent(this,signin::class.java)
-//              startActivity(i)
-//            finish()
-//
-//        }else{
-//
-//            val ref = FirebaseDatabase.getInstance().getReference("Users")
-//            ref.child(firebaseUser.uid)
-//                .addListenerForSingleValueEvent(object : ValueEventListener {
-//
-//                    override fun onDataChange(snapshot: DataSnapshot) {
-//
-//                        val userType = snapshot.child("userType").value
-//                        if (userType == "user"){
-//                            startActivity(Intent(this@SplachActivity,DashBoardUserActivity::class.java))
-//                            finish()
-//                        }
-//                        else if ( userType == "admin"){
-//                            startActivity(Intent(this@SplachActivity,DashBoardAdminActivity::class.java))
-//                            finish()
-//
-//                        }
-//                    }
-//
-//                    override fun onCancelled(error: DatabaseError) {
-//                    }
-//
-//                })
-//
-//        }
-//    }
-//}

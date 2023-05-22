@@ -8,7 +8,7 @@ import com.example.finalcloudproject.utils.PreferanceManeger
 import com.google.firebase.firestore.DocumentReference
 import com.google.firebase.firestore.FirebaseFirestore
 
- class BaseActivity2 : AppCompatActivity() {
+ open class BaseActivity2 : AppCompatActivity() {
     private var documentReference: DocumentReference? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {

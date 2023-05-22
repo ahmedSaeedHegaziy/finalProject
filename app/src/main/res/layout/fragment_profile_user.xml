@@ -8,7 +8,7 @@
     android:gravity="center"
     android:layoutDirection="rtl"
     android:orientation="vertical"
-    tools:context=".admin.ProfileAdminFragment">
+    tools:context=".doctor.ProfileAdminFragment">
 
 
     <FrameLayout

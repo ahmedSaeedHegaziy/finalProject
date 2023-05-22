@@ -13,7 +13,7 @@
         tools:layout="@layout/fragment_home_user" />
     <fragment
         android:id="@+id/profileFragment_user"
-        android:name="com.example.finalcloudproject.admin.ProfileAdminFragment"
+        android:name="com.example.finalcloudproject.doctor.ProfileAdminFragment"
         android:label="fragment_profile"
         tools:layout="@layout/fragment_profile_user" />
     <fragment

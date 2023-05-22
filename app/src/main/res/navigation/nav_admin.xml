@@ -23,17 +23,17 @@
 
     <fragment
         android:id="@+id/profile_fragment"
-        android:name="com.example.finalcloudproject.admin.ProfileAdminFragment"
+        android:name="com.example.finalcloudproject.doctor.ProfileAdminFragment"
         android:label="fragment_profile"
         tools:layout="@layout/fragment_profile_admin" />
     <fragment
         android:id="@+id/chat_admin_fragment"
-        android:name="com.example.finalcloudproject.admin.ChatAdminFragment"
+        android:name="com.example.finalcloudproject.doctor.ChatAdminFragment"
         android:label="fragment_chat_admin"
         tools:layout="@layout/fragment_chat_admin" />
     <fragment
         android:id="@+id/notifications_fragment"
-        android:name="com.example.finalcloudproject.admin.NotificationsFragment"
+        android:name="com.example.finalcloudproject.doctor.NotificationsFragment"
         android:label="fragment_notifications"
         tools:layout="@layout/fragment_notifications" />
 </navigation>

@@ -43,7 +43,7 @@ class UserProfileActivity : BaseActivity(), View.OnClickListener {
         }
 
         birthOfDatee.setOnClickListener {
-            val currentDate = Calendar.getInstance() //  عشان يعرض التاريخ الي موجو بالايميليتور
+            val currentDate = Calendar.getInstance()
             val day = currentDate.get(Calendar.DAY_OF_MONTH)
             val month = currentDate.get(Calendar.MONTH)
             val year = currentDate.get(Calendar.YEAR)
@@ -51,13 +51,12 @@ class UserProfileActivity : BaseActivity(), View.OnClickListener {
                 this,
                 DatePickerDialog.OnDateSetListener { datePicker, y, m, d ->
                     birthOfDatee.setText(" $y / ${m + 1} / $d ")
-                    //  m +1  عشان احل مشكلة اللي بينقص شهر عشان بيعد من الصفر
                 },
                 year,
                 month,
                 day
-            ) // يوم شهر سنة
-            picker.show() // عشان اظهرها
+            )
+            picker.show()
         }
 
         rg_UserType.setOnCheckedChangeListener { group, checkedId ->
@@ -79,7 +78,7 @@ class UserProfileActivity : BaseActivity(), View.OnClickListener {
 
 
         if (mUserDetails.profileCompleted == 0) {
-            txtTitle.text = "اكمل اعداد الملف الشخصي"
+            txtTitle.text = "اكمل  الملف الشخصي"
             full_namee.isEnabled = false
             birthOfDatee.isEnabled = false
             til_mobile_number.isEnabled = false

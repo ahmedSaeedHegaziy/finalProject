@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.finalcloudproject.databinding.LayoutViewAdminBinding
 import com.example.finalcloudproject.view.TopicsActivity
 import com.example.finalcloudproject.view.DashBoardAdminActivity
-import com.example.finalcloudproject.admin.EditCategoryFragment
+import com.example.finalcloudproject.doctor.EditCategoryFragment
 import com.example.finalcloudproject.model.Category
 import com.squareup.picasso.Picasso
 import java.io.Serializable

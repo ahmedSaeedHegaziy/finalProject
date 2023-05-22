@@ -1,4 +1,4 @@
-package com.example.finalcloudproject.admin
+package com.example.finalcloudproject.doctor
 
 import android.app.Activity
 import android.app.AlertDialog

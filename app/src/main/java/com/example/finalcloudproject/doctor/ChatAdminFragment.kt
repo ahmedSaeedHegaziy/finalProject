@@ -1,4 +1,4 @@
-package com.example.finalcloudproject.admin
+package com.example.finalcloudproject.doctor
 
 import android.content.Intent
 import android.graphics.BitmapFactory

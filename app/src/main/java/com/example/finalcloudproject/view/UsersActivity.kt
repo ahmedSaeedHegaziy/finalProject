@@ -3,11 +3,9 @@ package com.example.finalcloudproject.view
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
-import com.example.finalcloudproject.adapter.User
 import com.example.finalcloudproject.databinding.ActivityUsersBinding
 import com.example.finalcloudproject.firestore.BaseActivity2
 import com.example.finalcloudproject.listeners.UserListeners
-import com.example.finalcloudproject.model.User
 import com.example.finalcloudproject.utils.Constants
 import com.example.finalcloudproject.utils.PreferanceManeger
 import com.google.android.gms.tasks.Task
@@ -57,11 +55,11 @@ class UsersActivity : BaseActivity2(), UserListeners {
                             if (currentUserId == queryDocumentSnapshot.id) {
                                 continue
                             }
-                            val user = User()
+                            val user = com.example.finalcloudproject.model.User()
                             user.fullName = queryDocumentSnapshot.getString(Constants.KEY_NAME).toString()
                             user.email = queryDocumentSnapshot.getString(Constants.KEY_EMAIL).toString()
                             user.image = queryDocumentSnapshot.getString(Constants.KEY_IMAGE).toString()
-//                            user.token = queryDocumentSnapshot.getString(Constants.KEY_FCM_TOKEN)
+
                             user.id = queryDocumentSnapshot.id
                             users.add(user)
                         }

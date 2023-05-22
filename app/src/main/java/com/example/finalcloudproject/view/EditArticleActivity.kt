@@ -26,7 +26,7 @@ import java.io.ByteArrayOutputStream
 class EditArticleActivity : AppCompatActivity() {
     private lateinit var binding: ActivityEditArticleBinding
     lateinit var db: FirebaseFirestore
-    //private var progressDialog: ProgressDialog? = null
+
     private lateinit var progressDialog: Dialog
     private var fileImgURI: Uri? = null
     private var fileVideoURI: Uri? = null
@@ -69,7 +69,7 @@ class EditArticleActivity : AppCompatActivity() {
         binding.btnDelete.setOnClickListener {
             val dialog = AlertDialog.Builder(this)
             dialog.setTitle("حذف")
-            dialog.setMessage("هل تريد حذف هذا المقال!!")
+            dialog.setMessage("هل تريد الحذف ")
             dialog.setPositiveButton("نعم") { _, _ ->
                 db.collection("Article").document(id).delete()
                     .addOnSuccessListener {
@@ -159,8 +159,6 @@ class EditArticleActivity : AppCompatActivity() {
                 uploadImg(false, true)
             } else if (name.isNotEmpty() && description.isNotEmpty() && imageURI != null && videoURI != null && audioURI == null) {
                 uploadImg(true, false)
-            } else if (name.isNotEmpty() && description.isNotEmpty() && imageURI == null && videoURI == null && audioURI != null) {
-                uploadAudio()
             } else if (name.isNotEmpty() && description.isNotEmpty() && imageURI == null && videoURI != null && audioURI == null) {
                 uploadVideo(false)
             } else if (name.isNotEmpty() && description.isNotEmpty() && imageURI != null && videoURI == null && audioURI == null) {
@@ -247,13 +245,7 @@ class EditArticleActivity : AppCompatActivity() {
         startActivityForResult(intent, PICK_Video_REQUEST)
     }
 
-    fun selsectAudio() {
-        val intent = Intent()
-        intent.action = Intent.ACTION_PICK
-        intent.type = "audio/*"
-        startActivityForResult(intent, PICK_Audio_REQUEST)
 
-    }
 
     fun uploadImg(isVideo: Boolean, isAudio: Boolean) {
         val bitmap = (binding.img1.drawable as BitmapDrawable).bitmap
@@ -283,7 +275,6 @@ class EditArticleActivity : AppCompatActivity() {
                         uploadVideo(isAudio)
                     }
                     if (fileImgURI != null && isAudio == true && isVideo == false) {
-                        uploadAudio()
                     }
                     if (fileImgURI != null && isAudio == false && isVideo == false)
                         udpateArticle(
@@ -320,7 +311,6 @@ class EditArticleActivity : AppCompatActivity() {
                     fileVideoURI = uri
                     if (fileVideoURI != null && isAudio == true) {
                         videoRef.child(videoName1).delete()
-                        uploadAudio()
                     } else if (fileVideoURI != null) {
                         videoRef.child(videoName1).delete()
                         udpateArticle(
@@ -336,47 +326,6 @@ class EditArticleActivity : AppCompatActivity() {
             }
     }
 
-    fun uploadAudio() {
-        audioName =
-            System.currentTimeMillis()
-                .toString() + "_omraudios.mp3"
-        val childRef2 =
-            audioRef.child(audioName)
-        val uploadTask2 = childRef2.putFile(audioURI!!)
-        uploadTask2
-            .addOnFailureListener { exception ->
-                Toast.makeText(
-                    this,
-                    " فشل تحميل الصوت${exception.message})",
-                    Toast.LENGTH_SHORT
-                )
-                    .show()
-                hideDialog()
-            }
-            .addOnSuccessListener {
-                childRef2.downloadUrl.addOnSuccessListener { uri1 ->
-                    fileAudioURI = uri1
-                    if (fileAudioURI != null) {
-                        audioRef.child(audioName1).delete()
-                        udpateArticle(
-                            fileImgURI.toString(),
-                            imgName,
-                            fileVideoURI.toString(),
-                            videoName,
-                            fileAudioURI.toString(),
-                            audioName
-                        )
-                    } else {
-                        Toast.makeText(
-                            this,
-                            "حاول مرة اخرى!",
-                            Toast.LENGTH_SHORT
-                        ).show()
-                        hideDialog()
-                    }
-                }
-            }
-    }
 
 
     private fun showDialog(text: String) {

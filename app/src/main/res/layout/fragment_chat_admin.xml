@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:animateLayoutChanges="true"
     android:layoutDirection="rtl"
-    tools:context=".admin.ChatAdminFragment">
+    tools:context=".doctor.ChatAdminFragment">
     <!--    android:background="@color/Primary"-->
 
     <com.google.android.material.appbar.CollapsingToolbarLayout

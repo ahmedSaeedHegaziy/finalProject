@@ -33,7 +33,6 @@ class TopicsActivityUser : AppCompatActivity() {
 
     fun getAllArticles(){
         val sharedP =this.getSharedPreferences("MyPref", Context.MODE_PRIVATE)
-//        id = sharedP.getString("idArticle", "0").toString()
         val idCategory = sharedP.getString("idCategory", "0").toString()
 
         db.collection("Article")
